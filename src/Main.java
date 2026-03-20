@@ -1,8 +1,10 @@
+import Algoritmos.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-//import Classes; //Import Package Classes dos Respetivos Algoritmos
+import static Algoritmos.MergeSort.PrintVetor;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,8 +12,12 @@ public class Main {
 
         inicio = System.currentTimeMillis();
  
-        //TODO Chama método para contar as palavras para saber o tamanho do vetor Aux
+        //TODO Chama método para contar e armazenar as palavras para o vetor Aux
         String[] palavras = LerFicheiro("palavras.txt");
+
+        MergeSort.MergeSort(palavras);
+
+        PrintVetor(palavras);
        
         fim=System.currentTimeMillis();
         tempo=fim-inicio;
