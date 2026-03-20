@@ -10,11 +10,13 @@ public class Main {
 
         inicio = System.currentTimeMillis();
  
-        //TODO
-        String[] palavras = LerFicheiro("palavras.txt"); //Chama método para contar as palavras para saber o tamanho do vetor Aux
+        //TODO Chama método para contar as palavras para saber o tamanho do vetor Aux
+        String[] palavras = LerFicheiro("palavras.txt");
        
         fim=System.currentTimeMillis();
         tempo=fim-inicio;
+
+        System.out.println("Tempo: " + tempo + "ms");
     }
 
     static String[] LerFicheiro(String caminho) {
@@ -60,11 +62,13 @@ public class Main {
         leitor.close();
 
         //Imprimir as palavras para testar o vetor
-        for (int j = 0; j < palavras.length; j++) {
-            System.out.println(palavras[j]);
-        }
+        /*
+            for (int j = 0; j < palavras.length; j++) {
+                System.out.println(palavras[j]);
+            }
 
-        System.out.println("\n\nForam imprimidas " + count + " palavras no vetor aux");
+            System.out.println("\n\nForam imprimidas " + count + " palavras no vetor aux");
+         */
 
         return palavras;
     }
