@@ -67,15 +67,6 @@ public class Main {
 
         leitor.close();
 
-        //Imprimir as palavras para testar o vetor
-        /*
-            for (int j = 0; j < palavras.length; j++) {
-                System.out.println(palavras[j]);
-            }
-
-            System.out.println("\n\nForam imprimidas " + count + " palavras no vetor aux");
-         */
-
         return palavras;
     }
 }
