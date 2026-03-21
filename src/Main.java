@@ -8,10 +8,14 @@ public class Main {
     public static void main(String[] args) {
         long inicio,fim,tempo;
 
+
+        //==========Primeira Bateria de Testes==========
         inicio = System.currentTimeMillis();
  
         //TODO Chama método para contar e armazenar as palavras para o vetor Aux
         String[] palavras = LerFicheiro("palavras.txt");
+        String[] Sucesso =  {"arruinai", "capitel", "curso", "eslavo", "gravataria", "longo", "obtenhais", "progenitor", "seria", "vaca"};
+        String[] Insucesso = {"algoritmo", "condicional", "direita", "esquerda", "grande", "livros", "prata", "silencio", "verde", "xarões"};
 
         /*
             MergeSort.MergeSort(palavras);
@@ -25,6 +29,43 @@ public class Main {
         tempo=fim-inicio;
 
         System.out.println("Tempo: " + tempo + "ms");
+
+        //==========Segunda Bateria de Testes==========
+        for (int i = 0; i < Sucesso.length; i++) { //Palavras existentes na wordlist
+            inicio = System.currentTimeMillis();
+
+            int res = PesquisaLinear.ProcuraLinear(palavras, Sucesso[i]);
+
+            if (res == -1 ) {
+                fim = System.currentTimeMillis();
+                tempo = fim - inicio;
+
+                System.out.println("Tempo de pesquisa: " + tempo + "ms Palavra: " + Sucesso[i] + " | Resultado: Falha");
+            } else {
+                fim = System.currentTimeMillis();
+                tempo = fim - inicio;
+
+                System.out.println("Tempo de pesquisa: " + tempo + "ms Palavra: " + Sucesso[i] + " | Resultado: Sucesso");
+            }
+        }
+
+        for (int j = 0; j < Insucesso.length; j++) { //Palavras inexistentes na wordlist
+            inicio = System.currentTimeMillis();
+
+            int res = PesquisaLinear.ProcuraLinear(palavras, Insucesso[j]);
+
+            if (res == -1 ) {
+                inicio = System.currentTimeMillis();
+                tempo = fim - inicio;
+
+                System.out.println("Tempo de pesquisa: " + tempo + "ms Palavra: " + Insucesso[j] + " | Resultado: Falha");
+            } else {
+                fim = System.currentTimeMillis();
+                tempo = fim - inicio;
+
+                System.out.println("Tempo de pesquisa: " + tempo + "ms Palavra: " + Insucesso[j] + " | Resultado: Sucesso");
+            }
+        }
     }
 
     static String[] LerFicheiro(String caminho) {
