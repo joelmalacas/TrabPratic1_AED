@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Algoritmos.MergeSort.PrintVetor;
-
 public class Main {
     public static void main(String[] args) {
         long inicio,fim,tempo;
@@ -15,9 +13,13 @@ public class Main {
         //TODO Chama método para contar e armazenar as palavras para o vetor Aux
         String[] palavras = LerFicheiro("palavras.txt");
 
-        MergeSort.MergeSort(palavras);
+        /*
+            MergeSort.MergeSort(palavras);
+            PrintVetor(palavras);
+        */
 
-        PrintVetor(palavras);
+        QuickSort.ordenaQuickSort(palavras);
+        QuickSort.PrintVetor(palavras);
        
         fim=System.currentTimeMillis();
         tempo=fim-inicio;
