@@ -8,9 +8,9 @@ public class Insercao {
         inicio = System.currentTimeMillis();
 
         for (int i = 1; i < oVector.length; i++) {
-            String x = oVector[i];          // ← int para String
+            String x = oVector[i];
             int j = i;
-            while (j > 0 && oVector[j - 1].compareTo(x) > 0) {  // ← > para .compareTo() > 0
+            while (j > 0 && oVector[j - 1].compareTo(x) > 0) {
                 oVector[j] = oVector[j - 1];
                 j--;
             }
