@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class PesquisaLinear {
 
-    private long inicio,fim,tempo;
+    private long inicio,fim;
     private long ResultsExis[], ResultsIns[];
 
     private void ProcuraLinear(String[] v, String palavra) {

@@ -2,7 +2,7 @@ package Algoritmos;
 
 public class QuickSort {
 
-    private long inicio,fim,tempo;
+    private long inicio,fim;
 
     public long ordenaQuickSort(String[] v) {
         inicio = System.currentTimeMillis();
@@ -10,9 +10,8 @@ public class QuickSort {
         quickSortRec(v, 0, v.length - 1);
 
         fim=System.currentTimeMillis();
-        tempo=fim-inicio;
 
-        return tempo;
+        return fim-inicio;
     }
 
     private void quickSortRec(String[] v, int ini, int fim) {

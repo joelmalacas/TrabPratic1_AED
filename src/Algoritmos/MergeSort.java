@@ -2,7 +2,7 @@ package Algoritmos;
 
 public class MergeSort {
 
-    private long inicio,fim,tempo;
+    private long inicio,fim;
 
     public long MergeSort(String[] v) {
         inicio = System.currentTimeMillis();
@@ -11,9 +11,8 @@ public class MergeSort {
         MergeSortRec(v, aux, 0, v.length - 1);
 
         fim=System.currentTimeMillis();
-        tempo=fim-inicio;
 
-        return tempo;
+        return fim-inicio;
     }
 
     private void MergeSortRec(String[] v, String[] vAux, int esq, int dir) {
