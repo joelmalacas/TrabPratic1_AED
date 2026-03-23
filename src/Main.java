@@ -1,82 +1,30 @@
 import Algoritmos.*;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        long inicio,fim,tempo;
-
+        //Instância
+        PesquisaLinear PesquisaLinear = new PesquisaLinear();
+        MergeSort MergeSort = new MergeSort();
+        QuickSort QuickSort = new QuickSort();
 
         //==========Primeira Bateria de Testes==========
-        inicio = System.currentTimeMillis();
- 
         //TODO Chama método para contar e armazenar as palavras para o vetor Aux
-        String[] palavras = LerFicheiro("palavras.txt");
+        String[] palavras = Ficheiro.LerFicheiro("palavras.txt");
+
         String[] Sucesso =  {"arruinai", "capitel", "curso", "eslavo", "gravataria", "longo", "obtenhais", "progenitor", "seria", "vaca"};
         String[] Insucesso = {"algoritmo", "condicional", "direita", "esquerda", "grande", "livros", "prata", "silencio", "verde", "xarões"};
 
-        /*
-            MergeSort.MergeSort(palavras);
-            PrintVetor(palavras);
-        */
-
-        QuickSort.ordenaQuickSort(palavras);
-        QuickSort.PrintVetor(palavras);
-       
-        fim=System.currentTimeMillis();
-        tempo=fim-inicio;
-
-        System.out.println("Tempo: " + tempo + "ms");
+        long resultMerge = MergeSort.MergeSort(palavras);
+        long resultQuick = QuickSort.ordenaQuickSort(palavras);
 
         //==========Segunda Bateria de Testes==========
-        PesquisaLinear.Sucesso(palavras, Sucesso);
-        PesquisaLinear.Insucesso(palavras, Insucesso);
-    }
+        PesquisaLinear.Existente(palavras, Sucesso);
+        PesquisaLinear.Inexistente(palavras, Insucesso);
 
-    static String[] LerFicheiro(String caminho) {
-
-        File ficheiro=new File(caminho);
-        
-        Scanner leitor=null;
-
-        try {
-            leitor = new Scanner(ficheiro);
-        } catch (FileNotFoundException e) {
-            System.out.println("Ficheiro não encontrado");
-            System.out.println("Erro: " + e); //DEBUG
-        }
-
-        //While ==> Contar as palavras
-        int count = 0;
-        while(leitor.hasNext()){
-            leitor.next();
-            count++;
-        }
-
-        leitor.close();
-
-        //============================
-
-        String[] palavras = new String[count];
-
-        try {
-            leitor = new Scanner(ficheiro);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return new String[0];
-        }
-
-        //While ==> Colocar as palavras no vetor Aux
-        int i = 0;
-        while (leitor.hasNext()) {
-            palavras[i] = leitor.next();
-            i++;
-        }
-
-        leitor.close();
-
-        return palavras;
+        //==========Output's==========
+        System.out.println("Tempo de ordenação MergeSort: " + resultMerge + "ms");
+        System.out.println("Tempo de ordenação QuickSort: " + resultQuick + "ms");
+        System.out.println("==========Sucesso==========\n" + PesquisaLinear.PrintSucesso());
+        System.out.println("==========Insucesso==========\n" + PesquisaLinear.PrintInsucesso());
     }
 }

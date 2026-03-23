@@ -2,11 +2,20 @@ package Algoritmos;
 
 public class QuickSort {
 
-    public static void ordenaQuickSort(String[] v) {
+    private long inicio,fim,tempo;
+
+    public long ordenaQuickSort(String[] v) {
+        inicio = System.currentTimeMillis();
+
         quickSortRec(v, 0, v.length - 1);
+
+        fim=System.currentTimeMillis();
+        tempo=fim-inicio;
+
+        return tempo;
     }
 
-    private static void quickSortRec(String[] v, int ini, int fim) {
+    private void quickSortRec(String[] v, int ini, int fim) {
         if (ini >= fim) {
             return;
         }
@@ -18,7 +27,7 @@ public class QuickSort {
         quickSortRec(v, i + 1, fim);
     }
 
-    private static int DivideMaiores(String[] v, int ini, int fim, String pivot) {
+    private int DivideMaiores(String[] v, int ini, int fim, String pivot) {
         int i = ini;
         int j = fim - 1;
 
@@ -37,7 +46,7 @@ public class QuickSort {
         return i;
     }
 
-    private static String pivotMediana(String[] v, int ini, int fim) {
+    private String pivotMediana(String[] v, int ini, int fim) {
         int centro = (ini + fim) / 2;
         if (v[ini].compareTo(v[centro]) > 0)
             troca(v, ini, centro);
@@ -50,13 +59,13 @@ public class QuickSort {
         return v[fim - 1];
     }
 
-    private static void troca(String[] v, int i, int j) {
+    private void troca(String[] v, int i, int j) {
         String aux = v[i];
         v[i] = v[j];
         v[j] = aux;
     }
 
-    public static void PrintVetor(String[] v) {
+    public void PrintVetor(String[] v) {
         for (int i = 0; i < v.length; i++) {
             System.out.println("v[" + i + "] = " + v[i]);
         }

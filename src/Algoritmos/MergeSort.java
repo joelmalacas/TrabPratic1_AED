@@ -2,12 +2,21 @@ package Algoritmos;
 
 public class MergeSort {
 
-    public static void MergeSort(String[] v) {
+    private long inicio,fim,tempo;
+
+    public long MergeSort(String[] v) {
+        inicio = System.currentTimeMillis();
+
         String[] aux = new String[v.length];
         MergeSortRec(v, aux, 0, v.length - 1);
+
+        fim=System.currentTimeMillis();
+        tempo=fim-inicio;
+
+        return tempo;
     }
 
-    private static void MergeSortRec(String[] v, String[] vAux, int esq, int dir) {
+    private void MergeSortRec(String[] v, String[] vAux, int esq, int dir) {
         if (esq >= dir) {
             return;
         }
@@ -19,7 +28,7 @@ public class MergeSort {
         Reagrupar(v, vAux, esq, centro + 1, dir);
     }
 
-    private static void Reagrupar(String[] v, String[] vAux, int i1, int i2, int fim2) {
+    private void Reagrupar(String[] v, String[] vAux, int i1, int i2, int fim2) {
         int fim1 = i2 - 1;
         int inicio = i1;
         int iAux = i1;
@@ -43,7 +52,7 @@ public class MergeSort {
             v[i] = vAux[i];
     }
 
-    public static void PrintVetor(String[] v) {
+    public void PrintVetor(String[] v) {
         for (int i = 0; i < v.length; i++) {
             System.out.println("v[" + i + "]=" + v[i]);
         }
