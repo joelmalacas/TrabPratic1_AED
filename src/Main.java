@@ -13,10 +13,10 @@ public class Main {
         QuickSort quickSort = new QuickSort();
         PesquisaLinear pesquisaLinear = new PesquisaLinear();
 
-        //==========Primeira Bateria de Testes==========
         //TODO Chama método para contar e armazenar as palavras para o vetor Aux
         String[] palavras = Ficheiro.LerFicheiro(caminhoFicheiro);
 
+        //==========Primeira Bateria de Testes==========
         long resultMerge = mergeSort.MergeSort(palavras);
         long resultQuick = quickSort.ordenaQuickSort(palavras);
         long resultSelecao = selecao.ordenaSelecao(palavras);
