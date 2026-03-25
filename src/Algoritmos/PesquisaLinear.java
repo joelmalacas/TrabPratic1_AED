@@ -5,7 +5,7 @@ import java.util.Objects;
 public class PesquisaLinear {
 
     private long inicio,fim;
-    private long ResultsExis[], ResultsIns[];
+    private long[] ResultsExis, ResultsIns;
 
     private void ProcuraLinear(String[] v, String palavra) {
         for(int i = 0; i < v.length; i++) {
