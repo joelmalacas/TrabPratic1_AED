@@ -3,9 +3,12 @@ package Algoritmos;
 public class Permutacao {
 
     private long inicio, fim;
+    private String[] auxOrdenado;
 
     public long ordenaPermutacao(String[] oVector) {
         inicio = System.currentTimeMillis();
+        auxOrdenado = new String[oVector.length];
+
 
         boolean ordenado = false;
         int i = 0;
@@ -24,6 +27,13 @@ public class Permutacao {
 
         fim=System.currentTimeMillis();
 
+        for (int l = 0; l < oVector.length; l++) {
+            auxOrdenado[l] = oVector[l];
+        }
         return fim - inicio;
+    }
+
+    public String[] getAuxOrdenado () {
+        return auxOrdenado;
     }
 }

@@ -12,8 +12,8 @@ public class Main {
         MergeSort mergeSort = new MergeSort();
         QuickSort quickSort = new QuickSort();
         PesquisaLinear pesquisaLinear = new PesquisaLinear();
+        PesquisaBinaria pesquisaBinaria = new PesquisaBinaria();
 
-        //TODO Chama método para contar e armazenar as palavras para o vetor Aux
         String[] palavras = Ficheiro.LerFicheiro(caminhoFicheiro);
 
         //==========Primeira Bateria de Testes==========
@@ -31,15 +31,30 @@ public class Main {
         pesquisaLinear.Inexistente(palavras, Insucesso);
 
         //==========Terceira Bateria de Testes==========
-        //TODO
+        String[] palavrasOrdenado = permutacao.getAuxOrdenado();
+        pesquisaLinear.Existente(palavrasOrdenado,Sucesso);
+        pesquisaLinear.Inexistente(palavrasOrdenado,Insucesso);
+        pesquisaBinaria.Existente(palavrasOrdenado, Sucesso);
+        pesquisaBinaria.Inexistente(palavrasOrdenado, Insucesso);
+
 
         //==========Output's==========
         System.out.println("Tempo de ordenação Seleção: " + resultSelecao + "ms");
         System.out.println("Tempo de ordenação Inserção: " + resultInsercao + "ms");
         System.out.println("Tempo de ordenação Permutação: " + resultPermutacao + "ms");
         System.out.println("Tempo de ordenação MergeSort: " + resultMerge + "ms");
-        System.out.println("Tempo de ordenação QuickSort: " + resultQuick + "ms");
+        System.out.println("Tempo de ordenação QuickSort:" + resultQuick + "ms \n\n");
+
+        System.out.println("==========Pesquisa Linear==========");
         System.out.println("==========Sucesso==========\n" + pesquisaLinear.PrintSucesso());
         System.out.println("==========Insucesso==========\n" + pesquisaLinear.PrintInsucesso());
+
+        System.out.println("==========Vetor Ordenado==========");
+        System.out.println("==========Pesquisa Linear==========");
+        System.out.println("==========Sucesso==========\n" + pesquisaLinear.PrintSucesso());
+        System.out.println("==========Insucesso==========\n" + pesquisaLinear.PrintInsucesso());
+        System.out.println("\n==========Pesquisa Binária==========");
+        System.out.println("==========Sucesso==========\n" + pesquisaBinaria.PrintSucesso());
+        System.out.println("==========Insucesso==========\n" + pesquisaBinaria.PrintInsucesso());
     }
 }
