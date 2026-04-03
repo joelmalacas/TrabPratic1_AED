@@ -30,13 +30,23 @@ public class Main {
         pesquisaLinear.Existente(palavras, Sucesso);
         pesquisaLinear.Inexistente(palavras, Insucesso);
 
+        String linearSucesso2 = pesquisaLinear.PrintSucesso();
+        String linearInsucesso2 = pesquisaLinear.PrintInsucesso();
+
         //==========Terceira Bateria de Testes==========
         String[] palavrasOrdenado = permutacao.getAuxOrdenado();
+
         pesquisaLinear.Existente(palavrasOrdenado,Sucesso);
         pesquisaLinear.Inexistente(palavrasOrdenado,Insucesso);
+
+        String linearSucesso3 = pesquisaLinear.PrintSucesso();
+        String linearInsucesso3 = pesquisaLinear.PrintInsucesso();
+
         pesquisaBinaria.Existente(palavrasOrdenado, Sucesso);
         pesquisaBinaria.Inexistente(palavrasOrdenado, Insucesso);
 
+        String binariaSucesso3 = pesquisaBinaria.PrintSucesso();
+        String binariaInsucesso3 = pesquisaBinaria.PrintInsucesso();
 
         //==========Output's==========
         System.out.println("Tempo de ordenação Seleção: " + resultSelecao + "ms");
@@ -46,15 +56,15 @@ public class Main {
         System.out.println("Tempo de ordenação QuickSort:" + resultQuick + "ms \n\n");
 
         System.out.println("==========Pesquisa Linear==========");
-        System.out.println("==========Sucesso==========\n" + pesquisaLinear.PrintSucesso());
-        System.out.println("==========Insucesso==========\n" + pesquisaLinear.PrintInsucesso());
+        System.out.println("==========Sucesso==========\n" + linearSucesso2);
+        System.out.println("==========Insucesso==========\n" + linearInsucesso2);
 
         System.out.println("==========Vetor Ordenado==========");
         System.out.println("==========Pesquisa Linear==========");
-        System.out.println("==========Sucesso==========\n" + pesquisaLinear.PrintSucesso());
-        System.out.println("==========Insucesso==========\n" + pesquisaLinear.PrintInsucesso());
+        System.out.println("==========Sucesso==========\n" + linearSucesso3);
+        System.out.println("==========Insucesso==========\n" + linearInsucesso3);
         System.out.println("\n==========Pesquisa Binária==========");
-        System.out.println("==========Sucesso==========\n" + pesquisaBinaria.PrintSucesso());
-        System.out.println("==========Insucesso==========\n" + pesquisaBinaria.PrintInsucesso());
+        System.out.println("==========Sucesso==========\n" + binariaSucesso3);
+        System.out.println("==========Insucesso==========\n" + binariaInsucesso3);
     }
 }
