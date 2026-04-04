@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 public class Ficheiro {
 
+    /*
+        * Método que lê wordlist (.txt) e devolve um array de strings
+    */
+
     public static String[] LerFicheiro(String caminho) {
 
         File ficheiro=new File(caminho);

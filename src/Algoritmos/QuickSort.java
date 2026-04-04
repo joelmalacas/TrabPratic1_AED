@@ -1,5 +1,10 @@
 package Algoritmos;
 
+/*
+* Classe QuickSort
+* Algoritmo de Ordenação QuickSort
+* */
+
 public class QuickSort {
 
     private long inicio,fim;

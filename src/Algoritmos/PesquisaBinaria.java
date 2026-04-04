@@ -2,6 +2,19 @@ package Algoritmos;
 
 import java.util.Objects;
 
+/*Classe PesquisaBinaria.java
+    * Algoritmo de Pesquisa Binária
+    * Na pesquisa binária o vetor é divido em 2 zonas
+    * A divisão pode ser feita de qualquer maneira, mas
+    * os melhores resultados (em média) obtêm-se quando
+    * se divide o vetor (e as zonas seguintes) em duas partes iguais
+    * Comparando elemento a procurar (x) com o elemento divisor
+    * escolhe-se a próxima zona a dividir:
+        *Se x for menor procurar na zona da esquerda
+        * Se x for maior procurar na zona da direita
+    * E assim sucessivamente até encontrar o valor ou a zona estar vazia
+*/
+
 public class PesquisaBinaria {
 
     private long inicio,fim;

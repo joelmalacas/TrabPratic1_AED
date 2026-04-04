@@ -1,5 +1,11 @@
 import Algoritmos.*;
 
+/*
+    * Classe Principal Main.java
+    * Onde vai ser executado as 3 Baterias de testes com as respetivas classes
+    * e mostradas as respetivas saídas
+*/
+
 public class Main {
     public static void main(String[] args) {
         //Constante do caminho do ficheiro .txt
@@ -61,10 +67,10 @@ public class Main {
 
         System.out.println("==========Vetor Ordenado==========");
         System.out.println("==========Pesquisa Linear==========");
-        System.out.println("==========Sucesso==========\n" + linearSucesso3);
+        System.out.println("=============Sucesso==========\n" + linearSucesso3);
         System.out.println("==========Insucesso==========\n" + linearInsucesso3);
         System.out.println("\n==========Pesquisa Binária==========");
-        System.out.println("==========Sucesso==========\n" + binariaSucesso3);
+        System.out.println("=============Sucesso==========\n" + binariaSucesso3);
         System.out.println("==========Insucesso==========\n" + binariaInsucesso3);
     }
 }
