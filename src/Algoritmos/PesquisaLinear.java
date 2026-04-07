@@ -1,12 +1,13 @@
 package Algoritmos;
 
-/*Classe PesquisaLinear
-* Algoritmo de Pesquisa Linear
-* Nesta procura o vetor é percorrido, elemento a elemento,
-* desde o primeiro até ao último
-* Termina-se a procura quando ocorre uma de duas situações:
-    *O elemento é encontrado
-    *todo o vetor foi pesquisado e não se encontrou o elemento
+/*
+    * Classe PesquisaLinear
+    * Algoritmo de Pesquisa Linear
+    * Nesta procura o vetor é percorrido, elemento a elemento,
+    * desde o primeiro até ao último
+    * Termina-se a procura quando ocorre uma de duas situações:
+        *O elemento é encontrado
+        *todo o vetor foi pesquisado e não se encontrou o elemento
 */
 
 import java.util.Objects;

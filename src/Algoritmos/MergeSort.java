@@ -1,14 +1,14 @@
 package Algoritmos;
 
 /*
-* Classe MergeSort.java
-* Algoritmo de Ordenação por MergeSort
-* é um algoritmo recursivo, divide
-* o vetor a meio, formando dois vetores:
-    * Ordena-os separadamente,
-    * Reagrupa-os num novo vetor
-* Para ordenar os vetores resultantes aplica o mesmo raciocínio
-* Obriga a crirar um novo vetor auxiliar devido ao reagrupamento
+    * Classe MergeSort.java
+    * Algoritmo de Ordenação por MergeSort
+    * é um algoritmo recursivo, divide
+    * o vetor a meio, formando dois vetores:
+        * Ordena-os separadamente,
+        * Reagrupa-os num novo vetor
+    * Para ordenar os vetores resultantes aplica o mesmo raciocínio
+    * Obriga a crirar um novo vetor auxiliar devido ao reagrupamento
 */
 
 public class MergeSort {

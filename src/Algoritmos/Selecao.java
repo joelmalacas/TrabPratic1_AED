@@ -1,5 +1,10 @@
 package Algoritmos;
-
+ /*
+    *Algoritmo Ordenação por Seleção
+    * procura o menor elemento do vetor
+    * troca o menor elemento com o primeiro elemento
+    * repete o processo até o vetor estar ordenado
+  */
 public class Selecao {
     private long inicio, fim;
 

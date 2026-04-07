@@ -1,13 +1,14 @@
 package Algoritmos;
 
-/*Classe Permutacao.java
-* Algoritmo de Ordenação por Permutação
-* Neste caso percorre-se o vetor, do último para o primeiro:
-    *Comparando elementos consecutivos dois a dois
-    * Trocando-os se estiverem na ordem inversa
-*Após a primeira iteração o menor valor estará na primeira posição
-    * Pelo que as repetições seguintes, deverão ter em conta apenas os restantes
-    * elementos e assim sucessivamente
+/*
+    * Classe Permutacao.java
+    * Algoritmo de Ordenação por Permutação
+    * Neste caso percorre-se o vetor, do último para o primeiro:
+        *Comparando elementos consecutivos dois a dois
+        * Trocando-os se estiverem na ordem inversa
+    *Após a primeira iteração o menor valor estará na primeira posição
+        * Pelo que as repetições seguintes, deverão ter em conta apenas os restantes
+        * elementos e assim sucessivamente
 */
 
 public class Permutacao {

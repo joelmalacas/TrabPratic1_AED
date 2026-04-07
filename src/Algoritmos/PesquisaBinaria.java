@@ -2,7 +2,8 @@ package Algoritmos;
 
 import java.util.Objects;
 
-/*Classe PesquisaBinaria.java
+/*
+    * Classe PesquisaBinaria.java
     * Algoritmo de Pesquisa Binária
     * Na pesquisa binária o vetor é divido em 2 zonas
     * A divisão pode ser feita de qualquer maneira, mas

@@ -1,9 +1,17 @@
 package Algoritmos;
 
 /*
-* Classe QuickSort
-* Algoritmo de Ordenação QuickSort
-* */
+    * Classe QuickSort
+    * Algoritmo de Ordenação QuickSort
+    * é um algoritmo recursivo
+    * é o algoritmo mais rápido de ordenação
+    * escolhe primeiramente um valot, também chamado de pivot
+    * divide o vetor em duas partes:
+        * a primeira parte contém elementos menores que o pivot
+        * a segunda parte contém elementos maiores que o pivot
+        * o pivot é colocado no meio das duas partes
+    * para ordenar as partes daí resultantes aplica-se o mesmo raciocínio
+*/
 
 public class QuickSort {
 
