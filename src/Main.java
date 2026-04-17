@@ -23,18 +23,18 @@ public class Main {
         String[] palavras = Ficheiro.LerFicheiro(caminhoFicheiro);
 
         //==========Primeira Bateria de Testes==========
-        long resultMerge = mergeSort.MergeSort(palavras);
-        long resultQuick = quickSort.ordenaQuickSort(palavras);
-        long resultSelecao = selecao.ordenaSelecao(palavras);
-        long resultInsercao = insercao.ordenaInsercao(palavras);
-        long resultPermutacao = permutacao.ordenaPermutacao(palavras);
+        long[] resultMerge = mergeSort.MergeSort(palavras.clone());
+        long[] resultQuick = quickSort.ordenaQuickSort(palavras.clone());
+        long[] resultSelecao = selecao.ordenaSelecao(palavras.clone());
+        long[] resultInsercao = insercao.ordenaInsercao(palavras.clone());
+        long[] resultPermutacao = permutacao.ordenaPermutacao(palavras.clone());
 
         //==========Segunda Bateria de Testes==========
         String[] Sucesso =  {"arruinai", "capitel", "curso", "eslavo", "gravataria", "longo", "obtenhais", "progenitor", "seria", "vaca"};
         String[] Insucesso = {"algoritmo", "condicional", "direita", "esquerda", "grande", "livros", "prata", "silencio", "verde", "xarões"};
 
-        pesquisaLinear.Existente(palavras, Sucesso);
-        pesquisaLinear.Inexistente(palavras, Insucesso);
+        pesquisaLinear.Existente(palavras.clone(), Sucesso);
+        pesquisaLinear.Inexistente(palavras.clone(), Insucesso);
 
         String linearSucesso2 = pesquisaLinear.PrintSucesso();
         String linearInsucesso2 = pesquisaLinear.PrintInsucesso();
@@ -55,11 +55,16 @@ public class Main {
         String binariaInsucesso3 = pesquisaBinaria.PrintInsucesso();
 
         //==========Output's==========
-        System.out.println("Tempo de ordenação Seleção: " + resultSelecao + "ms");
-        System.out.println("Tempo de ordenação Inserção: " + resultInsercao + "ms");
-        System.out.println("Tempo de ordenação Permutação: " + resultPermutacao + "ms");
-        System.out.println("Tempo de ordenação MergeSort: " + resultMerge + "ms");
-        System.out.println("Tempo de ordenação QuickSort:" + resultQuick + "ms \n\n");
+        System.out.println("Tempo de ordenação Seleção: " + resultSelecao[0] + "ms");
+        System.out.println("Tempo de ordenação Seleção: " + resultSelecao[1] + "ns");
+        System.out.println("Tempo de ordenação Inserção: " + resultInsercao[0] + "ms");
+        System.out.println("Tempo de ordenação Inserção: " + resultInsercao[1] + "ns");
+        System.out.println("Tempo de ordenação Permutação: " + resultPermutacao[0] + "ms");
+        System.out.println("Tempo de ordenação Permutação: " + resultPermutacao[1] + "ns");
+        System.out.println("Tempo de ordenação MergeSort: " + resultMerge[0] + "ms");
+        System.out.println("Tempo de ordenação MergeSort: " + resultMerge[1] + "ns");
+        System.out.println("Tempo de ordenação QuickSort:" + resultQuick[0] + "ms");
+        System.out.println("Tempo de ordenação QuickSort:" + resultQuick[1] + "ns \n\n");
 
         System.out.println("==========Pesquisa Linear==========");
         System.out.println("==========Sucesso==========\n" + linearSucesso2);

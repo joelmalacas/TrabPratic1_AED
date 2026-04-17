@@ -13,17 +13,22 @@ package Algoritmos;
 
 public class MergeSort {
 
-    private long inicio,fim;
+    private long inicio,fim, inicio2, fim2;
 
-    public long MergeSort(String[] v) {
+    public long[] MergeSort(String[] v) {
         inicio = System.currentTimeMillis();
+        inicio2 = System.nanoTime();
 
         String[] aux = new String[v.length];
         MergeSortRec(v, aux, 0, v.length - 1);
 
         fim=System.currentTimeMillis();
+        fim2 = System.nanoTime();
 
-        return fim-inicio;
+        long millis = fim - inicio;
+        long nanos = fim2 - inicio2;
+
+        return new long[] {millis, nanos};
     }
 
     private void MergeSortRec(String[] v, String[] vAux, int esq, int dir) {

@@ -18,8 +18,8 @@ import java.util.Objects;
 
 public class PesquisaBinaria {
 
-    private long inicio,fim;
-    private long[] ResultsExis, ResultsIns;
+    private long inicio,fim, inicio2, fim2;
+    private long[][] ResultsExis, ResultsIns;
 
     private void ProcuraBinaria (String[] v, String palavra) {
         boolean encontrou = false;
@@ -38,33 +38,47 @@ public class PesquisaBinaria {
     }
 
     public void Existente(String[] palavras, String[] Sucesso) {
-        ResultsExis = new long[Sucesso.length];
+        ResultsExis = new long[Sucesso.length][2];
 
         for (int i = 0; i < Sucesso.length; i++) {
             inicio = System.currentTimeMillis();
+            inicio2 = System.nanoTime();
             ProcuraBinaria(palavras, Sucesso[i]);
             fim = System.currentTimeMillis();
+            fim2 = System.nanoTime();
 
-            ResultsExis[i] = fim - inicio;
+            long millis = fim - inicio;
+            long nanos = fim2 - inicio2;
+
+
+            ResultsExis[i][0] = millis;
+            ResultsExis[i][1] = nanos;
         }
     }
 
     public void Inexistente(String[] palavras, String[] Insucesso) {
-        ResultsIns = new long[Insucesso.length];
+        ResultsIns = new long[Insucesso.length][2];
 
         for (int j = 0; j < Insucesso.length; j++) { //Palavras inexistentes na wordlist
             inicio = System.currentTimeMillis();
+            inicio2 = System.nanoTime();
             ProcuraBinaria(palavras, Insucesso[j]);
             fim = System.currentTimeMillis();
+            fim2 = System.nanoTime();
 
-            ResultsIns[j] = fim - inicio;
+            long millis = fim - inicio;
+            long nanos = fim2 - inicio2;
+
+
+            ResultsIns[j][0] = millis;
+            ResultsIns[j][1] = nanos;
         }
     }
 
     public String PrintSucesso() {
         String result = "";
         for (int i = 0; i < ResultsExis.length; i++) {
-            result += "v[" + i + "] = " + ResultsExis[i] + "ms\n";
+            result += "v[" + i + "] = " + ResultsExis[i][0] + "ms\n" + "v[" + i + "] = " + ResultsExis[i][1] + " ns\n";
         }
         return result;
     }
@@ -72,7 +86,7 @@ public class PesquisaBinaria {
     public String PrintInsucesso() {
         String result = "";
         for (int j = 0; j < ResultsIns.length; j++) {
-            result += "v[" + j + "] = " + ResultsIns[j] + "ms\n";
+            result += "v[" + j + "] = " + ResultsIns[j][0] + "ms\n" + "v[" + j + "] = " + ResultsIns[j][1] + "ns\n";
         }
         return result;
     }

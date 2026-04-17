@@ -9,10 +9,11 @@ package Algoritmos;
 
 public class Insercao {
 
-    private long inicio, fim;
+    private long inicio, fim, inicio2, fim2;
 
-    public long ordenaInsercao(String[] oVector) {
+    public long[] ordenaInsercao(String[] oVector) {
         inicio = System.currentTimeMillis();
+        inicio2 = System.nanoTime();
 
         for (int i = 1; i < oVector.length; i++) {
             String x = oVector[i];
@@ -25,6 +26,11 @@ public class Insercao {
         }
 
         fim = System.currentTimeMillis();
-        return fim - inicio;
+        fim2 = System.nanoTime();
+
+        long millis = fim - inicio;
+        long nanos = fim2 - inicio2;
+
+        return new long[] {millis, nanos};
     }
 }

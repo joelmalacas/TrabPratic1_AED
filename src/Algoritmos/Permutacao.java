@@ -13,11 +13,12 @@ package Algoritmos;
 
 public class Permutacao {
 
-    private long inicio, fim;
+    private long inicio, fim, inicio2, fim2;
     private String[] auxOrdenado;
 
-    public long ordenaPermutacao(String[] oVector) {
+    public long[] ordenaPermutacao(String[] oVector) {
         inicio = System.currentTimeMillis();
+        inicio2 = System.nanoTime();
         auxOrdenado = new String[oVector.length];
 
 
@@ -37,11 +38,16 @@ public class Permutacao {
         }
 
         fim=System.currentTimeMillis();
+        fim2 = System.nanoTime();
 
         for (int l = 0; l < oVector.length; l++) {
             auxOrdenado[l] = oVector[l];
         }
-        return fim - inicio;
+
+        long millis = fim - inicio;
+        long nanos = fim2 - inicio2;
+
+        return new long[] {millis, nanos};
     }
 
     public String[] getAuxOrdenado () {
